@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".detail.AboutTeamFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp">
+        <TextView
+            android:id="@+id/tv_league_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/leagues"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_league_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tv_league_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_league_label"
+            tools:text="Premier League" />
+
+        <TextView
+            android:id="@+id/tv_established_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/established"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_league_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_league_name" />
+
+        <TextView
+            android:id="@+id/tv_established"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_established_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_established_label"
+            tools:text="1992" />
+
+        <TextView
+            android:id="@+id/tv_stadium_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/stadium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_established_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_established" />
+
+        <TextView
+            android:id="@+id/tv_stadium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_label"
+            tools:text="Old Trafford" />
+
+        <TextView
+            android:id="@+id/tv_stadium_capacity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_stadium_capacity_label"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium" />
+
+        <TextView
+            android:id="@+id/tv_stadium_capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_capacity_label"
+            tools:text="74,140" />
+
+        <TextView
+            android:id="@+id/tv_stadium_location_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_stadium_location"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_capacity_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_capacity" />
+
+        <TextView
+            android:id="@+id/tv_stadium_location"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:justificationMode="inter_word"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_location_label"
+            tools:text="Sir Matt Busby Way, Old Trafford, Greater Manchester, England" />
+
+
+        <TextView
+            android:id="@+id/tv_stadium_desc_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_stadium_desc_label"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_location_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_location" />
+
+        <TextView
+            android:id="@+id/tv_stadium_desc"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:justificationMode="inter_word"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_desc_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/example_desc_stadium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:id="@+id/tv_image_label"
+            android:text="@string/tv_stadium_image_label"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_stadium_desc_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium_desc" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:gravity="center_horizontal"
+            tools:listitem="@tools:sample/avatars"
+            app:layout_constraintTop_toBottomOf="@id/tv_image_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
