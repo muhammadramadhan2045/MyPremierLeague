@@ -1,6 +1,7 @@
 package com.example.premierleagueapp.core.di
 
 import androidx.room.Room
+import com.example.premierleagueapp.core.BuildConfig
 import com.example.premierleagueapp.core.data.TeamRepository
 import com.example.premierleagueapp.core.data.source.local.LocalDataSource
 import com.example.premierleagueapp.core.data.source.local.room.TeamDatabase
@@ -38,11 +39,11 @@ val databaseModule= module {
 
 val networkModule = module {
     single {
-        val hostname= "www.thesportsdb.com"
+        val hostname= BuildConfig.BASE_URL
         val certificatePinner = CertificatePinner.Builder()
-            .add(hostname, "sha256/ljTDgm/k397r3IdZEKRul2NCPhqITZKGW8ue2nIVaGc=")
-            .add(hostname, "sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=")
-            .add(hostname, "sha256/ Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=")
+            .add(hostname, BuildConfig.PIN1)
+            .add(hostname, BuildConfig.PIN2)
+            .add(hostname, BuildConfig.PIN3)
             .build()
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))

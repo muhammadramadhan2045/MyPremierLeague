@@ -17,6 +17,14 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "BASE_URL", "\"www.thesportsdb.com\"")
+        //pins1
+        buildConfigField("String", "PIN1", "\"sha256/ljTDgm/k397r3IdZEKRul2NCPhqITZKGW8ue2nIVaGc=\"")
+        //pins2
+        buildConfigField("String", "PIN2", "\"sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=\"")
+        //pins3
+        buildConfigField("String", "PIN3", "\"sha256/ Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=\"")
     }
 
     buildTypes {
@@ -44,6 +52,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 

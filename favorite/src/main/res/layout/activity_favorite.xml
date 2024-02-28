@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".FavoriteActivity">
         <androidx.appcompat.widget.Toolbar
+            android:theme="@style/Theme.PremierLeagueApp.AppBarOverlay"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:popupTheme="@style/Theme.PremierLeagueApp.PopupOverlay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
