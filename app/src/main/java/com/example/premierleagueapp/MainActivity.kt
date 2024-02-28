@@ -1,19 +1,18 @@
 package com.example.premierleagueapp
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.ViewModel
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.premierleagueapp.databinding.ActivityMainBinding
-import com.example.premierleagueapp.setting.SettingActivity
 import com.example.premierleagueapp.setting.SettingPreferences
 import com.example.premierleagueapp.setting.SettingViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity(){
     private val viewModel: SettingViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,14 +39,13 @@ class MainActivity : AppCompatActivity(){
 
 
 
-
         val navView:BottomNavigationView = binding.navView
 
         val navController= findNavController(R.id.nav_host_fragment_activity_main)
 
         val appBarConfiguration= AppBarConfiguration(
             setOf(
-                R.id.navigation_home,R.id.navigation_favorite
+                R.id.navigation_home,R.id.navigation_setting
             )
         )
 
@@ -72,12 +71,9 @@ class MainActivity : AppCompatActivity(){
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        val id=item.itemId
-        when(id){
-            R.id.action_change_settings ->{
-                //intent to HomeActivity
-                val intent= Intent(this, SettingActivity::class.java)
-                startActivity(intent)
+        when(item.itemId){
+            R.id.action_favorite ->{
+                startActivity(Intent(this,Class.forName("com.example.premierleagueapp.favorite.FavoriteActivity")))
             }
         }
         return super.onOptionsItemSelected(item)

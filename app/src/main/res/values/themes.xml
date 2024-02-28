@@ -31,7 +31,16 @@
 
     <style name="Theme.PremierLeagueApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.PremierLeagueApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    
+
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation
+        duration. -->
+        <item name="windowSplashScreenBackground">@color/md_theme_light_onPrimary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_premierleague_splash</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.PremierLeagueApp</item>
+    </style>
 
 
     <style name="Theme.PremierLeagueApp" parent="Base.Theme.PremierLeagueApp" />

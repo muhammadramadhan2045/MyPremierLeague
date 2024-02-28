@@ -37,6 +37,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.maplibre.gl/android-plugin-annotation-v9
     implementation("org.maplibre.gl:android-plugin-annotation-v9:2.0.2")
 
+    //leakcanary
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.10")
+
 
 
 

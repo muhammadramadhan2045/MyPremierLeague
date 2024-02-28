@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home"
         />
     <fragment
-        android:id="@+id/navigation_favorite"
-        android:name="com.example.premierleagueapp.favorite.FavoriteFragment"
+        android:id="@+id/navigation_setting"
+        android:name="com.example.premierleagueapp.setting.SettingFragment"
         android:label="@string/menu_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_setting" />
 </navigation>

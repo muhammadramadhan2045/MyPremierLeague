@@ -4,7 +4,7 @@
     <string name="text_primary">Sample of title text</string>
     <string name="text_subtitle">Sample of subtitle text</string>
     <string name="league">League</string>
-    <string name="date">2023-11-05</string>
+    <string name="date">2023_11_05</string>
     <string name="score">1</string>
     <string name="vs">--</string>
     <string name="home_team">HomeTeam FC</string>

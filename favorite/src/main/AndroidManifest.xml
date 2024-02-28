@@ -12,8 +12,9 @@
     </dist:module>
 
     <application>
-        <activity android:exported="true"
-            android:name=".FavoriteActivity">
+        <activity
+            android:name=".FavoriteActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
