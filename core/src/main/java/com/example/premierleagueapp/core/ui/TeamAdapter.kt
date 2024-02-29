@@ -1,5 +1,6 @@
 package com.example.premierleagueapp.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +10,13 @@ import com.example.premierleagueapp.core.R
 import com.example.premierleagueapp.core.domain.model.Team
 import com.example.premierleagueapp.core.databinding.ItemListTeamBinding
 
-class   TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
+class TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
 
 
     private var listData= ArrayList<Team>()
     var onItemClick: ((Team) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<Team>?) {
         if (newListData == null) return
         listData.clear()

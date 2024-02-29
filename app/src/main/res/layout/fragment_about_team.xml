@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp">
+
         <TextView
             android:id="@+id/tv_league_label"
             android:layout_width="wrap_content"
@@ -103,9 +104,9 @@
         <TextView
             android:id="@+id/tv_stadium_location"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:justificationMode="inter_word"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
             app:layout_constraintTop_toBottomOf="@id/tv_stadium_location_label"
             tools:text="Sir Matt Busby Way, Old Trafford, Greater Manchester, England" />
@@ -125,19 +126,19 @@
         <TextView
             android:id="@+id/tv_stadium_desc"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:justificationMode="inter_word"
-            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_stadium_label"
             app:layout_constraintTop_toBottomOf="@id/tv_stadium_desc_label"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:text="@string/example_desc_stadium" />
 
         <TextView
+            android:id="@+id/tv_image_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:id="@+id/tv_image_label"
             android:text="@string/tv_stadium_image_label"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -148,16 +149,14 @@
             android:id="@+id/rv_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:gravity="center_horizontal"
-            tools:listitem="@tools:sample/avatars"
-            app:layout_constraintTop_toBottomOf="@id/tv_image_label"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_image_label"
+            tools:listitem="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </androidx.core.widget.NestedScrollView>

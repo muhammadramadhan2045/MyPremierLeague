@@ -7,9 +7,9 @@
     tools:context=".setting.SettingFragment">
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch_theme"
         android:text="@string/dark_mode"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
                             teamAdapter.setData(team.data)
                         }
 
-                        is com.example.premierleagueapp.core.data.Resource.Error -> {
+                        is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
                             binding.viewError.root.visibility = View.VISIBLE
                             binding.viewError.tvError.text =

@@ -15,12 +15,12 @@ import kotlinx.coroutines.flow.map
 
 class TeamRepository(
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: com.example.premierleagueapp.core.data.source.local.LocalDataSource,
+    private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : ITeamRepository {
 
-    override fun getAllTeam(): Flow<com.example.premierleagueapp.core.data.Resource<List<Team>>> =
-        object : com.example.premierleagueapp.core.data.NetworkBoundResource<List<Team>, List<TeamResponse>>(appExecutors) {
+    override fun getAllTeam(): Flow<Resource<List<Team>>> =
+        object : NetworkBoundResource<List<Team>, List<TeamResponse>>(appExecutors) {
             override fun loadFromDB(): Flow<List<Team>> {
                 return localDataSource.getAllTeam().map {
                     DataMapper.mapEntitiesToDomain(it)

@@ -1,7 +1,6 @@
 package com.example.premierleagueapp
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -21,14 +20,15 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(){
 
-    private lateinit var binding: ActivityMainBinding
+    private  var _binding: ActivityMainBinding?=null
+    private val binding get() = _binding!!
     private val pref: SettingPreferences by inject()
     private val viewModel: SettingViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -79,5 +79,13 @@ class MainActivity : AppCompatActivity(){
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding=null
+    }
 
+    override fun finishAfterTransition() {
+        super.finishAfterTransition()
+        finish()
+    }
 }

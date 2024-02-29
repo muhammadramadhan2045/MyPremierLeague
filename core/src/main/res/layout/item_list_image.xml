@@ -4,10 +4,10 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp"
-    android:layout_gravity="center_horizontal"
     app:cardMaxElevation="4dp"
     app:cardUseCompatPadding="true">
 
@@ -16,24 +16,19 @@
         android:layout_height="match_parent">
 
 
-
         <ImageView
+            android:id="@+id/iv_image"
             android:layout_width="250dp"
             android:layout_height="150dp"
             android:layout_margin="16dp"
-            android:src="@color/md_theme_dark_onPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="H,1.5:1"
-            android:id="@+id/iv_image"
             android:contentDescription="@string/image_description"
-            android:scaleType="fitCenter" />
-
-
-
-
+            android:scaleType="fitCenter"
+            android:src="@color/md_theme_dark_onPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1.5:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
