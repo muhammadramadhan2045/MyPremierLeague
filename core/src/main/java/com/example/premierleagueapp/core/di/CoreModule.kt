@@ -2,7 +2,9 @@ package com.example.premierleagueapp.core.di
 
 import androidx.room.Room
 import com.example.premierleagueapp.core.BuildConfig
+import com.example.premierleagueapp.core.data.SettingPreferences
 import com.example.premierleagueapp.core.data.TeamRepository
+import com.example.premierleagueapp.core.data.dataStore
 import com.example.premierleagueapp.core.data.source.local.LocalDataSource
 import com.example.premierleagueapp.core.data.source.local.room.TeamDatabase
 import com.example.premierleagueapp.core.data.source.remote.RemoteDataSource
@@ -59,10 +61,17 @@ val networkModule = module {
             .client(get())
             .build()
         retrofit.create(ApiService::class.java)
-
     }
 
 }
+
+val prefModule = module {
+    factory {
+        SettingPreferences(androidContext().applicationContext.dataStore)
+    }
+}
+
+
 
 val repositoryModule = module{
     single {
@@ -75,6 +84,6 @@ val repositoryModule = module{
         AppExecutors()
     }
     single<ITeamRepository> {
-        TeamRepository(get(), get(), get())
+        TeamRepository(get(), get(), get(),get())
     }
 }

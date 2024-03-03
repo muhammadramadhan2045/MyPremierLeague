@@ -1,4 +1,4 @@
-package com.example.premierleagueapp.setting
+package com.example.premierleagueapp.core.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -13,18 +13,7 @@ import kotlinx.coroutines.flow.map
 val Context.dataStore :DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class SettingPreferences(private val dataStore:DataStore<Preferences>){
-    companion object{
-        @Volatile
-        private var INSTANCE: SettingPreferences? = null
 
-        fun getInstance(dataStore: DataStore<Preferences>): SettingPreferences {
-            return INSTANCE ?: synchronized(this){
-                val instance = SettingPreferences(dataStore)
-                INSTANCE = instance
-                instance
-            }
-        }
-    }
 
     private val THEME_KEY= booleanPreferencesKey("theme_setting")
 
@@ -39,4 +28,6 @@ class SettingPreferences(private val dataStore:DataStore<Preferences>){
             preferences[THEME_KEY] = isDarkModeActive
         }
     }
+
+
 }

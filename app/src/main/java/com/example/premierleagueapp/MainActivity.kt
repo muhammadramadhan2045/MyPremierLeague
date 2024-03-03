@@ -12,17 +12,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.premierleagueapp.databinding.ActivityMainBinding
-import com.example.premierleagueapp.setting.SettingPreferences
 import com.example.premierleagueapp.setting.SettingViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(){
 
     private  var _binding: ActivityMainBinding?=null
     private val binding get() = _binding!!
-    private val pref: SettingPreferences by inject()
     private val viewModel: SettingViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,15 +51,15 @@ class MainActivity : AppCompatActivity(){
 
     }
 
-    private fun getThemeMode() {
-        viewModel.getThemeSetting().observe(this){isDarkModeActive:Boolean ->
-            if(isDarkModeActive){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }else{
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        private fun getThemeMode() {
+            viewModel.getThemeSetting().observe(this){isDarkModeActive:Boolean ->
+                if(isDarkModeActive){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
             }
         }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.setting_menu,menu)
@@ -81,6 +78,7 @@ class MainActivity : AppCompatActivity(){
 
     override fun onDestroy() {
         super.onDestroy()
+        viewModel.saveThemeSetting(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES)
         _binding=null
     }
 
@@ -88,4 +86,5 @@ class MainActivity : AppCompatActivity(){
         super.finishAfterTransition()
         finish()
     }
+
 }

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.premierleagueapp.databinding.FragmentSettingBinding
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -16,7 +15,6 @@ class SettingFragment : Fragment() {
     private  var _binding: FragmentSettingBinding?=null
     private val binding get() = _binding!!
 
-    private val pref: SettingPreferences by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,9 +52,6 @@ class SettingFragment : Fragment() {
         super.onDestroyView()
         _binding=null
     }
-
-
-
 
 
 }

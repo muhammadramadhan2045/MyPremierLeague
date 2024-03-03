@@ -16,7 +16,8 @@ import kotlinx.coroutines.flow.map
 class TeamRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
-    private val appExecutors: AppExecutors
+    private val appExecutors: AppExecutors,
+    private val settingPreferences: SettingPreferences
 ) : ITeamRepository {
 
     override fun getAllTeam(): Flow<Resource<List<Team>>> =
@@ -50,6 +51,14 @@ class TeamRepository(
     override fun setFavoriteTeam(team: Team, state: Boolean) {
         val teamEntity = DataMapper.mapDomainToEntity(team)
         appExecutors.diskIO().execute { localDataSource.setFavoriteTeam(teamEntity, state) }
+    }
+
+    override fun getThemeSetting(): Flow<Boolean> {
+        return settingPreferences.getThemeSetting()
+    }
+
+    override suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
+        settingPreferences.saveThemeSetting(isDarkModeActive)
     }
 
 

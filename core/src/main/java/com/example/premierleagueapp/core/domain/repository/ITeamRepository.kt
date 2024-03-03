@@ -12,4 +12,11 @@ interface ITeamRepository {
     fun getAllFavoriteTeam(): Flow<List<Team>>
 
     fun setFavoriteTeam(team: Team, state: Boolean)
+
+    fun getThemeSetting(): Flow<Boolean>
+
+    suspend fun saveThemeSetting(isDarkModeActive: Boolean)
+
+
+
 }
